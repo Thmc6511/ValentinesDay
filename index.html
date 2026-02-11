@@ -354,10 +354,10 @@
           <div class="captchaCard" id="captchaCard">
             <div class="prompt">
               <div class="chip"><span></span> Human Verification</div>
-              <h2 id="promptText">Select all images</h2>
+              <h2 id="promptText">Select any images you want</h2>
 
               <div class="subtitle" style="margin:0;">
-                Click every tile. When you’ve selected <strong>all 9</strong>, press <strong>Verify</strong>.
+                You can click any tiles… but to pass, you have to select <strong>all 9</strong> 😌
               </div>
 
               <div class="statusRow">
@@ -369,11 +369,11 @@
 
               <div class="actions">
                 <button class="btnGhost" id="resetBtn" type="button">Reset</button>
-                <button class="btnPrimary" id="verifyBtn" type="button" disabled>Verify</button>
+                <button class="btnPrimary" id="verifyBtn" type="button">Verify</button>
               </div>
 
               <div style="margin-top:10px; font-size:12.5px; color:rgba(255,255,255,0.62);" id="microHint">
-                Tip: if you fail, the system gets dramatic.
+                Tip: hit Verify whenever you want 😉
               </div>
             </div>
 
@@ -407,6 +407,7 @@ is the greatest gift I have ever received.
 
 Happy Valentine’s Day ❤️
 — Miguel</p>
+
               </div>
 
               <div class="tinyRow">
@@ -427,11 +428,8 @@ Happy Valentine’s Day ❤️
   </div>
 
   <script>
-    // -----------------------------
-    // IMPORTANT:
-    // Your images are in the REPO ROOT.
-    // Filenames must match EXACTLY (capital letters matter).
-    // -----------------------------
+    // Images are in the REPO ROOT (no /images folder).
+    // Make sure these filenames match EXACTLY.
     const tiles = [
       { src: "IMG_2008.jpeg" },
       { src: "IMG_0195.JPG" },
@@ -465,6 +463,7 @@ Happy Valentine’s Day ❤️
       "Nope. The verification goblin is unsatisfied.",
       "Almost! (not really Katie) Try again 🤭"
     ];
+
 
     function shuffle(arr){
       const a = [...arr];
@@ -540,13 +539,12 @@ Happy Valentine’s Day ❤️
       const pct = Math.round((count/total)*100);
       meterFill.style.width = `${pct}%`;
 
-      // Verify only enabled when ALL are selected
-      verifyBtn.disabled = (count !== total);
+      // Verify is ALWAYS clickable (your request)
+      verifyBtn.disabled = false;
 
-      // little playful hint
-      if (count === 0) microHint.textContent = "Tip: if you fail, the system gets dramatic.";
-      else if (count < total) microHint.textContent = "Keep going… you’re almost certified 😌";
-      else microHint.textContent = "Perfect. Now press Verify 💗";
+      if (count === 0) microHint.textContent = "Tip: hit Verify whenever you want 😉";
+      else if (count < total) microHint.textContent = "You can verify now… but the portal wants all 9 😌";
+      else microHint.textContent = "You got all 9. Now hit Verify 💗";
     }
 
     function resetAll(){
@@ -559,6 +557,10 @@ Happy Valentine’s Day ❤️
       const msg = customMsg || failLines[Math.floor(Math.random()*failLines.length)];
       statusText.textContent = msg;
 
+      // Force back to main (captcha) screen
+      valentineScreen.style.display = "none";
+      captchaScreen.style.display = "block";
+
       captchaCard.classList.remove("shake");
       void captchaCard.offsetWidth;
       captchaCard.classList.add("shake");
@@ -567,9 +569,12 @@ Happy Valentine’s Day ❤️
     }
 
     function verify(){
-      // She must select ALL tiles
+      // Must select ALL tiles to pass
       if (selected.size !== shuffled.length){
-        failAnimation();
+        // Optional: show how many she got
+        const got = selected.size;
+        const total = shuffled.length;
+        failAnimation(`Not yet 😌 You got ${got}/${total}. Try again!`);
         return;
       }
 

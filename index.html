@@ -9,13 +9,9 @@
       --bg1:#0b1020;
       --bg2:#1b0f2a;
       --card: rgba(255,255,255,0.08);
-      --card2: rgba(255,255,255,0.12);
       --text: rgba(255,255,255,0.92);
       --muted: rgba(255,255,255,0.70);
       --accent: #ff5fa2;
-      --accent2:#ffd1e3;
-      --good:#46d37a;
-      --bad:#ff4d4d;
       --shadow: 0 20px 70px rgba(0,0,0,0.45);
       --radius: 22px;
     }
@@ -35,10 +31,7 @@
       overflow:hidden;
     }
 
-    .wrap{
-      width:min(980px, 100%);
-      position:relative;
-    }
+    .wrap{ width:min(980px, 100%); position:relative; }
 
     .panel{
       background: linear-gradient(180deg, var(--card), rgba(255,255,255,0.06));
@@ -56,39 +49,20 @@
       background: rgba(255,255,255,0.06);
       border-bottom: 1px solid rgba(255,255,255,0.10);
     }
-    .brand{
-      display:flex; gap:10px; align-items:center;
-      letter-spacing:0.2px;
-      font-weight:700;
-    }
+    .brand{ display:flex; gap:10px; align-items:center; letter-spacing:0.2px; font-weight:700; }
     .dot{
       width:12px; height:12px; border-radius:99px;
       background: radial-gradient(circle at 30% 30%, #fff, var(--accent));
       box-shadow: 0 0 14px rgba(255,95,162,0.55);
     }
-    .hint{
-      font-size:13px;
-      color:var(--muted);
-    }
+    .hint{ font-size:13px; color:var(--muted); }
 
-    .content{
-      padding:22px;
-    }
+    .content{ padding:22px; }
 
-    /* --- CAPTCHA SCREEN --- */
-    #captchaScreen{
-      display:block;
-      animation: fadeIn 480ms ease-out;
-    }
-    .title{
-      font-size:22px;
-      margin:0 0 6px 0;
-    }
-    .subtitle{
-      margin:0 0 18px 0;
-      color:var(--muted);
-      line-height:1.35;
-    }
+    /* CAPTCHA */
+    #captchaScreen{ display:block; animation: fadeIn 480ms ease-out; }
+    .title{ font-size:22px; margin:0 0 6px 0; }
+    .subtitle{ margin:0 0 18px 0; color:var(--muted); line-height:1.35; }
 
     .captchaCard{
       display:grid;
@@ -96,10 +70,7 @@
       gap:18px;
       align-items:stretch;
     }
-
-    @media (max-width: 860px){
-      .captchaCard{ grid-template-columns:1fr; }
-    }
+    @media (max-width: 860px){ .captchaCard{ grid-template-columns:1fr; } }
 
     .prompt{
       background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.05));
@@ -110,12 +81,9 @@
       overflow:hidden;
     }
 
-    .prompt h2{
-      margin:0 0 10px 0;
-      font-size:18px;
-    }
+    .prompt h2{ margin:0 0 10px 0; font-size:18px; }
 
-    .prompt .chip{
+    .chip{
       display:inline-flex;
       align-items:center;
       gap:8px;
@@ -127,23 +95,15 @@
       color:var(--muted);
       margin-bottom:12px;
     }
-    .prompt .chip span{
+    .chip span{
       width:8px; height:8px; border-radius:99px;
       background: var(--accent);
       box-shadow:0 0 12px rgba(255,95,162,0.55);
     }
 
-    .statusRow{
-      display:flex;
-      gap:10px;
-      align-items:center;
-      margin-top:12px;
-    }
-
+    .statusRow{ display:flex; gap:10px; align-items:center; margin-top:12px; }
     .meter{
-      flex:1;
-      height:10px;
-      border-radius:999px;
+      flex:1; height:10px; border-radius:999px;
       background: rgba(255,255,255,0.08);
       border:1px solid rgba(255,255,255,0.10);
       overflow:hidden;
@@ -154,13 +114,7 @@
       background: linear-gradient(90deg, var(--accent), #ffcfdd);
       transition: width 220ms ease;
     }
-
-    .statusText{
-      font-size:12.5px;
-      color:var(--muted);
-      min-width: 170px;
-      text-align:right;
-    }
+    .statusText{ font-size:12.5px; color:var(--muted); min-width: 200px; text-align:right; }
 
     .gridWrap{
       background: rgba(0,0,0,0.18);
@@ -185,6 +139,7 @@
       border: 1px solid rgba(255,255,255,0.10);
       background: rgba(255,255,255,0.06);
       transform: translateZ(0);
+      user-select:none;
     }
 
     .tile img{
@@ -196,11 +151,7 @@
       transform: scale(1.02);
       transition: transform 220ms ease, filter 220ms ease;
     }
-
-    .tile:hover img{
-      transform: scale(1.06);
-      filter: saturate(1.12) contrast(1.06);
-    }
+    .tile:hover img{ transform: scale(1.06); filter: saturate(1.12) contrast(1.06); }
 
     .tile .check{
       position:absolute;
@@ -239,16 +190,9 @@
       outline: 3px solid rgba(255,95,162,0.55);
       box-shadow: 0 0 0 6px rgba(255,95,162,0.12);
     }
-
     .tile.selected .check{ opacity:1; }
 
-    .actions{
-      display:flex;
-      gap:10px;
-      margin-top:14px;
-      justify-content:flex-end;
-      flex-wrap:wrap;
-    }
+    .actions{ display:flex; gap:10px; margin-top:14px; justify-content:flex-end; flex-wrap:wrap; }
 
     button{
       border:none;
@@ -278,10 +222,7 @@
       box-shadow:none;
     }
 
-    .shake{
-      animation: shake 420ms ease-in-out;
-    }
-
+    .shake{ animation: shake 420ms ease-in-out; }
     @keyframes shake{
       0%,100%{ transform: translateX(0); }
       15%{ transform: translateX(-10px); }
@@ -291,11 +232,8 @@
       75%{ transform: translateX(-3px); }
     }
 
-    /* --- VALENTINE SCREEN --- */
-    #valentineScreen{
-      display:none;
-      animation: fadeIn 520ms ease-out;
-    }
+    /* VALENTINE */
+    #valentineScreen{ display:none; animation: fadeIn 520ms ease-out; }
 
     .valentineHero{
       position:relative;
@@ -315,19 +253,15 @@
       inset:-40px;
       pointer-events:none;
       opacity:0.85;
-      filter: blur(0.2px);
     }
-
     .flower{
       position:absolute;
       font-size: 26px;
-      transform: translateZ(0);
       animation: floaty 7s ease-in-out infinite;
       opacity:0.95;
     }
     .flower.small{ font-size: 20px; opacity:0.9; }
     .flower.big{ font-size: 34px; opacity:0.95; }
-
     @keyframes floaty{
       0%,100%{ transform: translateY(0px) rotate(0deg); }
       50%{ transform: translateY(-14px) rotate(2deg); }
@@ -344,15 +278,11 @@
     }
 
     .heart{
-      width: 56px;
-      height: 56px;
-      margin: 0 auto;
+      width: 56px; height: 56px; margin: 0 auto;
       border-radius: 18px;
       background: rgba(255,255,255,0.10);
       border: 1px solid rgba(255,255,255,0.16);
-      display:flex;
-      align-items:center;
-      justify-content:center;
+      display:flex; align-items:center; justify-content:center;
       box-shadow: 0 16px 40px rgba(0,0,0,0.20);
       backdrop-filter: blur(10px);
     }
@@ -381,7 +311,6 @@
       backdrop-filter: blur(10px);
       box-shadow: 0 20px 55px rgba(0,0,0,0.25);
     }
-
     .noteBox p{
       margin: 0;
       color: rgba(255,255,255,0.88);
@@ -390,14 +319,7 @@
       white-space: pre-wrap;
     }
 
-    .tinyRow{
-      display:flex;
-      gap:10px;
-      justify-content:center;
-      flex-wrap:wrap;
-      margin-top:10px;
-    }
-
+    .tinyRow{ display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin-top:10px; }
     .tiny{
       font-size:12.5px;
       color: rgba(255,255,255,0.70);
@@ -411,14 +333,6 @@
       from{ opacity:0; transform: translateY(10px); }
       to{ opacity:1; transform: translateY(0px); }
     }
-
-    a.smallLink{
-      color: rgba(255,255,255,0.78);
-      text-decoration: none;
-      border-bottom: 1px dashed rgba(255,255,255,0.30);
-    }
-    a.smallLink:hover{ color: #fff; }
-
   </style>
 </head>
 <body>
@@ -440,16 +354,17 @@
           <div class="captchaCard" id="captchaCard">
             <div class="prompt">
               <div class="chip"><span></span> Human Verification</div>
-              <h2 id="promptText">Select all images with <strong>Mike</strong></h2>
+              <h2 id="promptText">Select all images</h2>
+
               <div class="subtitle" style="margin:0;">
-                Click every tile that shows <strong>me</strong>. Then press <strong>Verify</strong>.
+                Click every tile. When you’ve selected <strong>all 9</strong>, press <strong>Verify</strong>.
               </div>
 
               <div class="statusRow">
                 <div class="meter" aria-label="progress meter">
                   <div id="meterFill"></div>
                 </div>
-                <div class="statusText" id="statusText">0 selected</div>
+                <div class="statusText" id="statusText">0 / 9 selected</div>
               </div>
 
               <div class="actions">
@@ -457,7 +372,7 @@
                 <button class="btnPrimary" id="verifyBtn" type="button" disabled>Verify</button>
               </div>
 
-              <div style="margin-top:10px; font-size:12.5px; color:rgba(255,255,255,0.62);">
+              <div style="margin-top:10px; font-size:12.5px; color:rgba(255,255,255,0.62);" id="microHint">
                 Tip: if you fail, the system gets dramatic.
               </div>
             </div>
@@ -480,18 +395,18 @@
 
               <h1 class="headline">Happy Valentine’s Day</h1>
               <p class="subhead">
-                You passed the world’s most important verification.
+                Congratulations. You passed the world’s most important verification.
               </p>
 
               <div class="noteBox">
-                <p id="noteText">
-Hey love,
+                <p id="noteText">Hey love,
 I just wanted you to know how much I appreciate you.
-Thank you for being you — you make my days better in a way I can’t really explain.
+Thank you for being you. You make my days better in a way I can’t really explain, 
+and I cannot even begin to describe how easy it is to love you. And, truly, falling for you 
+is the greatest gift I have ever received.
 
 Happy Valentine’s Day ❤️
-— Mike
-                </p>
+— Miguel</p>
               </div>
 
               <div class="tinyRow">
@@ -501,7 +416,7 @@ Happy Valentine’s Day ❤️
               </div>
 
               <div style="margin-top:8px; font-size:12.5px; color:rgba(255,255,255,0.62);">
-                (If you want, add a cute photo + playlist link here.)
+                (Optional: add a playlist link or a photo here later.)
               </div>
             </div>
           </div>
@@ -513,47 +428,44 @@ Happy Valentine’s Day ❤️
 
   <script>
     // -----------------------------
-    // EDIT THESE:
-    // Put your photos in /images and update filenames below.
-    // "isMe: true" should be ONLY your photos.
+    // IMPORTANT:
+    // Your images are in the REPO ROOT.
+    // Filenames must match EXACTLY (capital letters matter).
     // -----------------------------
     const tiles = [
-      { src: "images/me1.jpg", isMe: true },
-      { src: "images/decoy1.jpg", isMe: false },
-      { src: "images/me2.jpg", isMe: true },
-      { src: "images/decoy2.jpg", isMe: false },
-      { src: "images/decoy3.jpg", isMe: false },
-      { src: "images/me3.jpg", isMe: true },
-      { src: "images/decoy4.jpg", isMe: false },
-      { src: "images/me4.jpg", isMe: true },
-      { src: "images/decoy5.jpg", isMe: false },
+      { src: "IMG_0070.JPG" },
+      { src: "IMG_0195.JPG" },
+      { src: "IMG_0677.jpeg" },
+      { src: "IMG_1329.jpeg" },
+      { src: "IMG_2294.JPG" },
+      { src: "IMG_2348.JPG" },
+      { src: "IMG_2861.jpeg" },
+      { src: "IMG_2921.JPG" },
+      { src: "IMG_3058.JPG" },
     ];
 
-    // OPTIONAL: change the prompt text
-    const promptLabel = "Select all images with Mike";
-
-    // OPTIONAL: tweak difficulty (how many must be selected before Verify enables)
-    // Here we require selecting at least 1 tile to enable Verify
-    const MIN_SELECTION_TO_VERIFY = 1;
-
-    // -----------------------------
-    // App logic
-    // -----------------------------
     const grid = document.getElementById("grid");
     const verifyBtn = document.getElementById("verifyBtn");
     const resetBtn = document.getElementById("resetBtn");
     const statusText = document.getElementById("statusText");
     const meterFill = document.getElementById("meterFill");
     const captchaCard = document.getElementById("captchaCard");
-    const promptText = document.getElementById("promptText");
+    const microHint = document.getElementById("microHint");
 
     const captchaScreen = document.getElementById("captchaScreen");
     const valentineScreen = document.getElementById("valentineScreen");
     const flowerField = document.getElementById("flowerField");
 
-    promptText.innerHTML = promptLabel.replace("Mike", "<strong>Mike</strong>");
+    const failLines = [
+      "You missed one. Try again, Kiki.",
+      "Not quite… select ALL of them please, pebble. 😈",
+      "System says: ‘Nice try.’ Try again 💗",
+      "Close! But the portal demands perfection.",
+      "Okay wait… how did you miss THAT one 😭 Resetting.",
+      "Nope. The verification goblin is unsatisfied.",
+      "Almost! (not really Katie) Try again 🤭"
+    ];
 
-    // Shuffle tiles so it feels "captcha-ish"
     function shuffle(arr){
       const a = [...arr];
       for(let i=a.length-1;i>0;i--){
@@ -564,7 +476,7 @@ Happy Valentine’s Day ❤️
     }
 
     let shuffled = shuffle(tiles);
-    let selected = new Set(); // indices
+    let selected = new Set();
 
     function render(){
       grid.innerHTML = "";
@@ -621,16 +533,20 @@ Happy Valentine’s Day ❤️
 
     function updateStatus(){
       const count = selected.size;
-      statusText.textContent = `${count} selected`;
+      const total = shuffled.length;
 
-      // Progress meter based on selecting the "me" tiles (just for vibes)
-      const totalMe = shuffled.filter(x => x.isMe).length;
-      let selectedMe = 0;
-      selected.forEach(i => { if(shuffled[i]?.isMe) selectedMe++; });
-      const pct = totalMe === 0 ? 0 : Math.min(100, Math.round((selectedMe/totalMe)*100));
+      statusText.textContent = `${count} / ${total} selected`;
+
+      const pct = Math.round((count/total)*100);
       meterFill.style.width = `${pct}%`;
 
-      verifyBtn.disabled = count < MIN_SELECTION_TO_VERIFY;
+      // Verify only enabled when ALL are selected
+      verifyBtn.disabled = (count !== total);
+
+      // little playful hint
+      if (count === 0) microHint.textContent = "Tip: if you fail, the system gets dramatic.";
+      else if (count < total) microHint.textContent = "Keep going… you’re almost certified 😌";
+      else microHint.textContent = "Perfect. Now press Verify 💗";
     }
 
     function resetAll(){
@@ -639,39 +555,25 @@ Happy Valentine’s Day ❤️
       render();
     }
 
-    function failAnimation(msg){
+    function failAnimation(customMsg){
+      const msg = customMsg || failLines[Math.floor(Math.random()*failLines.length)];
       statusText.textContent = msg;
+
       captchaCard.classList.remove("shake");
       void captchaCard.offsetWidth;
       captchaCard.classList.add("shake");
-      setTimeout(() => {
-        resetAll();
-      }, 650);
+
+      setTimeout(() => { resetAll(); }, 700);
     }
 
     function verify(){
-      const totalMeIdx = new Set();
-      shuffled.forEach((t, idx) => { if(t.isMe) totalMeIdx.add(idx); });
-
-      // must select EXACTLY all "me" tiles and no decoys
-      let ok = true;
-
-      // if any selected is not me => fail
-      selected.forEach(i => {
-        if(!shuffled[i]?.isMe) ok = false;
-      });
-
-      // if any me tile not selected => fail
-      totalMeIdx.forEach(i => {
-        if(!selected.has(i)) ok = false;
-      });
-
-      if(!ok){
-        failAnimation("Verification failed. Try again 😈");
+      // She must select ALL tiles
+      if (selected.size !== shuffled.length){
+        failAnimation();
         return;
       }
 
-      // Success -> show valentine screen
+      // Success
       captchaScreen.style.display = "none";
       valentineScreen.style.display = "block";
       makeFlowers();
@@ -681,7 +583,6 @@ Happy Valentine’s Day ❤️
     resetBtn.addEventListener("click", resetAll);
     verifyBtn.addEventListener("click", verify);
 
-    // Cute floating flower background
     function makeFlowers(){
       const emojis = ["🌸","🌷","🌹","💐","🌺","🌼","🪻"];
       flowerField.innerHTML = "";
@@ -709,7 +610,6 @@ Happy Valentine’s Day ❤️
       }
     }
 
-    // Initial render
     render();
   </script>
 </body>
